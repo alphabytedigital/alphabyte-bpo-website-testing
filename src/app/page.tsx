@@ -1,24 +1,31 @@
 import Section from "@/components/Section";
+import HeroBackground from "@/components/HeroBackground"; // <-- Import the new component
 
 export default function Home() {
   return (
     <main>
       {/* --- REVISED HERO SECTION --- */}
-      <section className="container mx-auto flex flex-col items-center text-center px-4 py-20 lg:py-32">
-        <h1 className="text-4xl md:text-6xl font-bold max-w-4xl">
-          Your On-Demand <span className="text-red-500">Technical Support</span> Team
-        </h1>
-        <p className="text-lg text-white/80 mt-6 max-w-3xl">
-          Whether you're supporting your employees or your customers, we provide
-          the expert remote support that lets you focus on your core business.
-        </p>
-        <div className="mt-8 flex gap-4">
-          <button className="bg-red-600 px-6 py-3 rounded-md hover:bg-red-700 transition-colors font-semibold">
-            Request a Quote
-          </button>
-          <button className="border border-white/50 px-6 py-3 rounded-md hover:bg-white/10 transition-colors font-semibold">
-            Learn More
-          </button>
+      <section className="relative container mx-auto flex flex-col items-center text-center px-4 py-20 lg:py-32 overflow-hidden">
+        {/* The background animation component */}
+        <HeroBackground />
+        
+        {/* Wrapper to keep content above the background */}
+        <div className="relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold max-w-4xl">
+            Your On-Demand <span className="text-red-500">Technical Support</span> Team
+          </h1>
+          <p className="text-lg text-white/80 mt-6 max-w-3xl">
+            Whether you're supporting your employees or your customers, we provide
+            the expert remote support that lets you focus on your core business.
+          </p>
+          <div className="mt-8 flex gap-4">
+            <button className="bg-red-600 px-6 py-3 rounded-md hover:bg-red-700 transition-colors font-semibold">
+              Request a Quote
+            </button>
+            <button className="border border-white/50 px-6 py-3 rounded-md hover:bg-white/10 transition-colors font-semibold">
+              Learn More
+            </button>
+          </div>
         </div>
       </section>
 
