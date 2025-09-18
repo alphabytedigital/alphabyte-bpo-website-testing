@@ -1,24 +1,11 @@
-"use client"; // This component now uses a client-side hook
-
 import Link from 'next/link';
-import { useScrollPosition } from '@/hooks/useScrollPosition'; // <-- Import the hook
-import { clsx } from 'clsx'; // <-- Import clsx
 
+// No longer needs to be a client component
 export default function Navbar() {
-  const scrollY = useScrollPosition();
-
-  // Conditionally apply classes based on scroll position
-  const navClasses = clsx(
-    "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-    {
-      "border-b border-transparent": scrollY < 50,
-      "border-b border-white/20 bg-black/50 backdrop-blur-lg": scrollY >= 50,
-    }
-  );
-
   return (
-    <nav className={navClasses}>
-      <div className="container mx-auto flex justify-between items-center p-4">
+    // All positioning and background classes are removed. Padding is reduced from p-4 to py-2 px-4.
+    <nav className="w-full">
+      <div className="container mx-auto flex justify-between items-center py-2 px-4">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold text-red-500">
           AlphaByte

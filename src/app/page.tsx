@@ -1,16 +1,14 @@
 import Section from "@/components/Section";
-import HeroBackground from "@/components/HeroBackground"; // <-- Import the new component
+import HeroBackground from "@/components/HeroBackground";
 
 export default function Home() {
   return (
     <main>
-      {/* --- REVISED HERO SECTION --- */}
-      <section className="relative container mx-auto flex flex-col items-center text-center px-4 py-20 lg:py-32 overflow-hidden">
-        {/* The background animation component */}
+      {/* --- HERO SECTION --- */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         <HeroBackground />
         
-        {/* Wrapper to keep content above the background */}
-        <div className="relative z-10">
+        <div className="relative z-10 py-20 lg:py-32">
           <h1 className="text-4xl md:text-6xl font-bold max-w-4xl">
             Your On-Demand <span className="text-red-500">Technical Support</span> Team
           </h1>
@@ -18,7 +16,8 @@ export default function Home() {
             Whether you're supporting your employees or your customers, we provide
             the expert remote support that lets you focus on your core business.
           </p>
-          <div className="mt-8 flex gap-4">
+          {/* Added justify-center to this div to center the buttons */}
+          <div className="mt-8 flex justify-center gap-4">
             <button className="bg-red-600 px-6 py-3 rounded-md hover:bg-red-700 transition-colors font-semibold">
               Request a Quote
             </button>
@@ -27,15 +26,16 @@ export default function Home() {
             </button>
           </div>
         </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#111111] to-transparent z-20" />
       </section>
 
-      {/* --- NEW "WHO WE HELP" SECTION --- */}
+      {/* --- "WHO WE HELP" SECTION --- */}
       <Section
         title="Built For Your Unique Needs"
         subtitle="We offer two specialized support models designed for distinct business challenges."
       >
         <div className="grid md:grid-cols-2 gap-8 text-left">
-          {/* Card 1: Internal IT Support */}
           <div className="bg-white/5 p-8 rounded-lg border border-transparent hover:border-red-500 transition-colors">
             <h3 className="text-2xl font-bold mb-4">For Your Employees</h3>
             <p className="text-white/80 mb-6">
@@ -50,8 +50,6 @@ export default function Home() {
               <li>Organizations undergoing technological changes.</li>
             </ul>
           </div>
-
-          {/* Card 2: SaaS Customer Support */}
           <div className="bg-white/5 p-8 rounded-lg border border-transparent hover:border-red-500 transition-colors">
             <h3 className="text-2xl font-bold mb-4">For Your Customers</h3>
             <p className="text-white/80 mb-6">
@@ -69,7 +67,7 @@ export default function Home() {
         </div>
       </Section>
       
-      {/* How We Partner Section (Stays the Same) */}
+      {/* --- "HOW WE PARTNER" SECTION --- */}
       <Section
         title="How We Partner With You"
         subtitle="Our partnership model is built on transparency and deep integration to become a true extension of your team."

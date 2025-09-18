@@ -1,19 +1,19 @@
 import Link from 'next/link';
 import React from 'react';
 
-// Define the properties for the banner component
 type PromoBannerProps = {
   text: string;
-  link?: string; // The link is optional
-  linkText?: string; // Optional text for the link/button
+  link?: string;
+  linkText?: string;
 };
 
 export default function PromoBanner({ text, link, linkText = "Learn More" }: PromoBannerProps) {
   return (
-    <div className="bg-red-500/10 text-center py-2 px-4 text-sm text-white/90">
+    // Reduced vertical padding from py-1.5 to py-1
+    <div className="bg-red-700 text-center py-1 px-4 text-sm text-red-100">
       <span>{text}</span>
       {link && (
-        <Link href={link} className="ml-2 underline hover:text-red-500 font-semibold transition-colors">
+        <Link href={link} className="ml-2 underline hover:text-white font-semibold transition-colors">
           {linkText}
         </Link>
       )}

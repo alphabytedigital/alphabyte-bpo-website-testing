@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PromoBanner from "@/components/PromoBanner";
 import LenisProvider from "@/components/LenisProvider";
+import Header from "@/components/Header"; // <-- Import the new Header component
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -25,14 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lexend.className} bg-[#111111] text-white flex flex-col min-h-screen`}>
         <LenisProvider>
-          <PromoBanner 
-            text="Special Offer: Get 20% off your first three months with our Business Pro plan!" 
-            link="/packages"
-            linkText="Explore Packages"
-          />
-          <Navbar />
-          {/* Add top padding to account for the fixed navbar's height */}
-          <main className="flex-grow pt-[60px]">{children}</main>
+          {/* Replace the separate components with the single Header */}
+          <Header />
+          
+          {/* Update padding to match the new, shorter header height */}
+          <main className="flex-grow pt-[80px]">{children}</main>
+          
           <Footer />
         </LenisProvider>
       </body>

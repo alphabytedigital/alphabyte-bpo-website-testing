@@ -1,10 +1,22 @@
---- CONTEXT PACKET ---
+CONTEXT PACKET
 Project: AlphaByte BPO Website
 Tech Stack: Next.js 15.5.2, React 19.1.0, TypeScript, Tailwind CSS v4
 
-Current Status: The project is stable, and all dependencies are correctly installed. The codebase is reverted to the last stable commit from Saturday, with all static pages (Home, Services, Packages, How It Works, Contact) complete and linked. The website is structurally finished and ready for visual enhancements.
+Current Status: The header has been refactored to fix major visual bugs. A new Header component now wraps the PromoBanner and Navbar, making the entire header block fixed ("sticky") and shorter for a sleeker appearance. The issue of the banner disappearing on scroll has been resolved.
 
-File Structure: All page routes are under src/app/. All components are under src/components/.
+File Structure:
+
+src/app/: Page routes
+
+src/components/: UI components
+
+New File: src/components/Header.tsx
+
+Modified Files: src/components/PromoBanner.tsx, src/components/Navbar.tsx
+
+src/hooks/: Custom React hooks
+
+Modified File: src/app/layout.tsx
 
 Current package.json:
 
@@ -42,4 +54,4 @@ JSON
     "typescript": "^5"
   }
 }
-Next Step: Proceed with a safe and compatible plan to implement the desired features (promo banner, smooth scroll, full-screen sections, dynamic navbar, and hero background animation) using the current, stable tech stack.
+Next Step: Review the new header implementation and plan further visual refinements or content additions.
