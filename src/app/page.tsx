@@ -1,5 +1,6 @@
 import Section from "@/components/Section";
 import HeroBackground from "@/components/HeroBackground";
+import ScrollingCards from "@/components/ScrollingCards"; // <-- Import the new component
 
 export default function Home() {
   return (
@@ -16,7 +17,6 @@ export default function Home() {
             Whether you're supporting your employees or your customers, we provide
             the expert remote support that lets you focus on your core business.
           </p>
-          {/* Added justify-center to this div to center the buttons */}
           <div className="mt-8 flex justify-center gap-4">
             <button className="bg-red-600 px-6 py-3 rounded-md hover:bg-red-700 transition-colors font-semibold">
               Request a Quote
@@ -29,6 +29,9 @@ export default function Home() {
 
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#111111] to-transparent z-20" />
       </section>
+
+      {/* --- SCROLLING CARDS SECTION --- */}
+      <ScrollingCards />
 
       {/* --- "WHO WE HELP" SECTION --- */}
       <Section
